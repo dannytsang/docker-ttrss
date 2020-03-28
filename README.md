@@ -1,5 +1,5 @@
 # TTRSS #
-Containts application server to run Tiny Tiny RSS.
+Containts application server to run Tiny Tiny RSS. I am not affiliated with the project. More details can be found [here](https://tt-rss.org/)
 
 ## Pre-Requisites ##
 A database running MySQL with associated schema and access.
