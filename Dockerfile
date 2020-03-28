@@ -25,6 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && apt install \
   php$PHP_VERSION-json \
   php$PHP_VERSION-mbstring \
   php$PHP_VERSION-xml \
+  php$PHP_VERSION-intl \
   supervisor fail2ban \
   ntp \
   wget \
