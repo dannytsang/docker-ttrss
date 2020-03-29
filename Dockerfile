@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-LABEL maintainer="Danny Tsang <danny@dannytsang.co.uk>" \
+LABEL maintainer="Danny Tsang <danny@tsang.uk>" \
       application="ttrss"
 
 # Set timezone
