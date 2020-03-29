@@ -39,14 +39,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && apt install \
 RUN cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
 # Add supervisord config to image
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # nginx config
 RUN sed -i -e"s/keepalive_timeout\s*65/keepalive_timeout 2/" /etc/nginx/nginx.conf && \
     sed -i -e"s/keepalive_timeout 2/keepalive_timeout 2;\n\tclient_max_body_size 100m/" /etc/nginx/nginx.conf && \
     echo "daemon off;" >> /etc/nginx/nginx.conf && \
     rm -f /etc/nginx/sites-available/default
-ADD nginx/default /etc/nginx/sites-available/
+COPY nginx/default /etc/nginx/sites-available/default
 
 # PHP-FPM config
 RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php/$PHP_VERSION/fpm/php.ini && \
@@ -75,7 +75,7 @@ RUN git clone https://github.com/jonrandoem/ttrss-qrcode.git && \
 RUN chown -R www-data:www-data $WWW_ROOT && chmod -R 775 $WWW_ROOT
 
 # Add startup script and give it permission to execute
-ADD docker/start.sh /startup.sh
+COPY docker/start.sh /startup.sh
 RUN chmod +x /startup.sh
 
 ## Create Volumes ##
