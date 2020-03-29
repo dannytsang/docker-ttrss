@@ -1,0 +1,31 @@
+version: '3.5'
+
+services:
+  ttrss:
+    image: dannytsang/ttrss:latest
+    container_name: ttrss
+    restart: always
+    environment:
+      - TZ="Europe/London"
+      - PHP_VERSION='7.2'
+      - WWW_ROOT='/usr/share/nginx/html'
+    volumes:
+      - config:/config
+      - feed_icon_cache:/usr/share/nginx/html/feed-icons
+      - /var/log:/var/log
+    ports:
+        - "80:80"
+        - "443:443"
+volumes:
+  feed_icon_cache:
+    driver: local
+    driver_opts:
+      type: none
+      device: $HOME/ttrss/feed-icons
+      o: bind
+  config:
+    driver: local
+    driver_opts:
+      type: none
+      device: $HOME/ttrss/config
+      o: bind
