@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 LABEL maintainer="Danny Tsang <danny@tsang.uk>" \
       application="ttrss"
 
@@ -8,7 +8,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ## Environment variables ##
 # PHP version used in file paths
-ENV PHP_VERSION 7.2
+ENV PHP_VERSION 7.4
 # nginx web root directory
 ENV WWW_ROOT /usr/share/nginx/html
 
