@@ -1,0 +1,18 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  - COMPOSE_VERSION: 1.25.0
+
+before_install:
+  # Install docker compose
+  - sudo docker build -t ttrss .
+
+script:
+  - docker run -d -p 80:80 -p 443:443 --name ttrss ttrss
+
+after_script:
+  - docker ps | grep -q ttrss
+  - docker logs ttrss
