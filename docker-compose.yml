@@ -7,7 +7,6 @@ services:
     restart: always
     environment:
       - TZ="Europe/London"
-      - PHP_VERSION='7.4'
       - WWW_ROOT='/usr/share/nginx/html'
     volumes:
       - config:/config

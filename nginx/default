@@ -71,21 +71,6 @@ server {
 }
 
 
-# another virtual host using mix of IP-, name-, and port-based configuration
-#
-#server {
-#       listen 8000;
-#       listen somename:8080;
-#       server_name somename alias another.alias;
-#       root html;
-#       index index.html index.htm;
-#
-#       location / {
-#               try_files $uri $uri/ =404;
-#       }
-#}
-
-
 # HTTPS server
 #
 server {
