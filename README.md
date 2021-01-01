@@ -15,4 +15,4 @@ Directories containing the TTRSS configuration is required as well as the follow
 3. Build the dockerFile and run it e.g `sudo docker run --restart=always -d -p 80:80 -p 443:443 -P -t -i -v ~/ttrss/config:/config:ro -v ~/ttrss/feed-icons:/usr/share/nginx/html/feed-icons -v /var/log:/var/log --name ttrss ttrss`
 
 # Docker-Compose #
-See [docker-compose.yml](docker-compose.yml) file for example of how to use it with docker-compose. It uses the same example in the docker run example above. The difference is it expects your shell to have an environment variable called $HOME. This is usually already set by default in Debian / Ubuntu.
+See [docker-compose.yml](https://github.com/dannytsang/docker-ttrss/blob/master/docker-compose.yml) file for example of how to use it with docker-compose. It uses the same example in the docker run example above. The difference is it expects your shell to have an environment variable called $HOME. This is usually already set by default in Debian / Ubuntu.
