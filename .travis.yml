@@ -1,4 +1,8 @@
-sudo: required
+os: linux
+
+dist: focal
+
+language: ruby
 
 services:
   - docker
