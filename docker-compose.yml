@@ -7,11 +7,11 @@ services:
     restart: always
     environment:
       - TZ="Europe/London"
-      - WWW_ROOT='/usr/share/nginx/html'
     volumes:
       - config:/config
       - feed_icon_cache:/usr/share/nginx/html/feed-icons
       - /var/log:/var/log
+      - plugins:/usr/share/nginx/html/
     ports:
         - "80:80"
         - "443:443"
@@ -22,9 +22,16 @@ volumes:
       type: none
       device: $HOME/ttrss/feed-icons
       o: bind
+  plugins:
+    driver: local
+    driver_opts:
+      type: none
+      device: $HOME/ttrss/plugins
+      o: bind
   config:
     driver: local
     driver_opts:
       type: none
       device: $HOME/ttrss/config
       o: bind
+

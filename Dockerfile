@@ -73,7 +73,7 @@ RUN chown -R www-data:www-data $WWW_ROOT && chmod -R 775 $WWW_ROOT && chmod +x /
 EXPOSE 80 443
 
 ## Create Volumes ##
-VOLUME ["/config", "/usr/share/nginx/html", "/usr/share/nginx/html/feed-icons"]
+VOLUME ["/config", "/usr/share/nginx/html", "/usr/share/nginx/html/feed-icons", "/usr/share/nginx/html/plugins"]
 
 # Execute the apache daemon in the foreground so we can treat the container as an
 # executeable and it wont immediately return.
