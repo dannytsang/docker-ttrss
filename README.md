@@ -2,7 +2,7 @@
 Containts application server to run Tiny Tiny RSS. I am not affiliated with the project. More details can be found [here](https://tt-rss.org/)
 
 ## Pre-Requisites ##
-A database running MySQL with associated schema and access.
+A database running MySQL or Postgres with associated schema and access.
 
 Directories containing the TTRSS configuration is required as well as the following Docker volumes:
 * `config` should contain the TTRSS config.php
